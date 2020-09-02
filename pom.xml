@@ -8,6 +8,7 @@
 		<module>hadoop</module>
 		<module>rubbyweb</module>
         <module>eureka</module>
+        <module>dashboard</module>
     </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>

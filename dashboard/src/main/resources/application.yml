@@ -1,5 +1,5 @@
 server:
-  port: 8001
+  port: 8010
   tomcat:
     uri-encoding: utf-8
 mybatis:
@@ -8,7 +8,7 @@ mybatis:
     - classpath:mappers/**.xml
 spring:
   application:
-    name: rubby-hadoop
+    name: rubby-services-dashboard
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
@@ -35,6 +35,8 @@ spring:
       date: yyyy-MM-dd
   thymeleaf:
     cache: false
+  messages:
+    encoding: UTF-8
 
 pagehelper:
   helper-dialect: mysql
@@ -46,15 +48,3 @@ jasypt:
     password: livepassword
 logging:
   config: classpath:log4j2.properties
-eureka:
-  client: #客户端注册
-    service-url:
-      defaultZone: http://localhost:7001/eureka
-  instance:
-    instance-id: ${spring.application.name}-${server.port} #eureka服务名称
-    prefer-ip-address: true #访问路径可以显示ip
-info:
-  app.name: Rubby
-  company.name: www.rubby.com
-  build.artifactId: @project.artifactId@
-  build.version: @project.version@
