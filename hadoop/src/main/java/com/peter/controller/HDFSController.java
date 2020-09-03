@@ -1,5 +1,6 @@
 package com.peter.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.peter.ServiceInfo;
 import com.peter.message.Result;
 import com.peter.service.HDFSService;
@@ -37,6 +38,7 @@ public class HDFSController {
     private HDFSUtil hdfsUtil;
 
     @GetMapping("test")
+    @HystrixCommand(commandKey = "hdfsTest")
     public Result test(){
         Result test = Result.success("hdfs connection test");
         return test;
