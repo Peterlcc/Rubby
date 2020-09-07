@@ -62,7 +62,8 @@ info:
   build.version: @project.version@
 zuul:
   routes: #路由规则
-    hadoop.serviceId: rubby-hadoop
-    hadoop.path: /hadoop/**
+    hadoop:
+      service-id: rubby-hadoop
+      path: /hadoop/**
   ignored-services: "*" #其他服务不能访问
   prefix: /rubby #url前缀
