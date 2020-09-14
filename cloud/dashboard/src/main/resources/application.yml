@@ -1,0 +1,16 @@
+server:
+  port: 8010
+  tomcat:
+    uri-encoding: utf-8
+spring:
+  application:
+    name: rubby-cloud-dashboard
+  messages:
+    encoding: UTF-8
+pagehelper:
+  helper-dialect: mysql
+  params: count=countSql
+  reasonable: true
+  support-methods-arguments: true
+logging:
+  config: classpath:log4j2.properties

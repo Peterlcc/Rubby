@@ -1,0 +1,30 @@
+server:
+  port: 8001
+  tomcat:
+    uri-encoding: utf-8
+spring:
+  application:
+    name: rubby-hadoop
+logging:
+  config: classpath:log4j2.properties
+eureka:
+  client: #客户端注册
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    instance-id: ${spring.application.name}-${server.port} #eureka服务名称
+    prefer-ip-address: true #访问路径可以显示ip
+info:
+  app.name: Rubby
+  company.name: www.rubby.com
+  build.artifactId: @project.artifactId@
+  build.version: @project.version@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'hystrix.stream' #暴露hystrix监控端点
+turbine:
+  app-config: hystrix-hadoop #指定需要收集信息的服务名称
+  cluster-name-expression: new String('default') #指定服务所属集群
+  combine-host-port: true #以主机名和端口号来区分服务

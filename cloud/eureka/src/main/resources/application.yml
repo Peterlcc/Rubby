@@ -1,0 +1,15 @@
+server:
+  port: 7001
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false #不注册自己
+    fetch-registry: false #不检索服务
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+spring:
+  application:
+    name: rubby-cloud-eureka
+logging:
+  config: classpath:log4j2.properties
